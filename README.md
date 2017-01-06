@@ -99,7 +99,7 @@ We love open source and contributors! Get started by cloning This
 repo and start building additional features. Whether it source code,
 documentation, issue or wiki entries. We love any kinda of contribution!
 
-*At Citrix, we’re committed to building a world-class ecosystem 
+> *At Citrix, we’re committed to building a world-class ecosystem 
 through open platforms. Our offerings power mission-critical business 
 operations for users, IT and partners, and we provide a number of APIs, 
 SDKs and tools to help you extend and integrate with our services. We’re excited to work
