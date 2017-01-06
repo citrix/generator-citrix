@@ -1,5 +1,5 @@
 # generator-citrix-netscaler [![NPM version][npm-image]][npm-url] 
-> A Yoeman generator that scaffolds a .NET Core sample project 
+> A Yeoman generator that scaffolds a .NET Core sample project 
 that show how to interact with the Citrix Netscaler CPX docker container
 via the NITRO REST API
 
