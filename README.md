@@ -6,7 +6,7 @@ via the NITRO REST API
 ## Required Software
 This generator works with the Citrix Netscaler product but the quickest
 way to get started with Citrix Netscaler is to download the **free** Netscaler CPX Express
-docker image from [here](www.microloadbalancer.com). 
+docker image from [here](http://www.microloadbalancer.com). 
 
 This generator builds a .NET Core application, so you will also
 need the .NET Core SDK and runtime from Microsoft. You can find
