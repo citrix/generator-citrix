@@ -12,6 +12,15 @@ This generator builds a .NET Core application, so you will also
 need the .NET Core SDK and runtime from Microsoft. You can find
 the the .NET Core download [here](https://www.microsoft.com/net/core) for the different platforms.
 
+### Getting started with Netscaler CPX and Docker videos
+<a href="https://www.youtube.com/watch?v=nq77i4h1VAo" target="_new">
+<img src="https://img.youtube.com/vi/nq77i4h1VAo/0.jpg" width="250">
+</a>
+
+<a href="https://www.youtube.com/watch?v=FPlCoUeF4VE" target="_new">
+<img src="https://img.youtube.com/vi/FPlCoUeF4VE/0.jpg" width="250">
+</a>
+
 ## Installation
 First, install [Yeoman](http://yeoman.io) and generator-citrix-netscaler using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
