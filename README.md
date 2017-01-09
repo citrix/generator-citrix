@@ -12,6 +12,8 @@ This generator builds a .NET Core application, so you will also
 need the .NET Core SDK and runtime from Microsoft. You can find
 the the .NET Core download [here](https://www.microsoft.com/net/download/core) for the different platforms.
 
+While not required for these samples, it is always good to have a source code editor.[Visual Studio Code](https://code.visualstudio.com/) is a good one since it knows how to handle .NET core projects but feel free to an editor that makes you happy. [Sublime Text](https://www.sublimetext.com/) or [Brackets](http://brackets.io/) are also good editors.
+
 ### Getting started with Netscaler CPX and Docker videos
 <table>
 <tr>
