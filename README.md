@@ -10,7 +10,7 @@ docker image from [here](http://www.microloadbalancer.com).
 
 This generator builds a .NET Core application, so you will also
 need the .NET Core SDK and runtime from Microsoft. You can find
-the the .NET Core download [here](https://www.microsoft.com/net/core) for the different platforms.
+the the .NET Core download [here](https://www.microsoft.com/net/download/core) for the different platforms.
 
 ### Getting started with Netscaler CPX and Docker videos
 <table>
