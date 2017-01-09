@@ -32,8 +32,8 @@ the the .NET Core download [here](https://www.microsoft.com/net/core) for the di
 First, install [Yeoman](http://yeoman.io) and generator-citrix-netscaler using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
-npm install -g generator-citrix-netscaler
+sudo npm install -g yo
+sudo npm install -g generator-citrix-netscaler
 ```
 
 Then generate your new project:
