@@ -7,6 +7,17 @@ module.exports = yeoman.Base.extend({
   {
     yeoman.Base.apply(this,arguments);
   },
+  prompting: function() {
+    return this.prompt([{
+      type    : 'input',
+      name    : 'nsHostname',
+      message : 'Please enter the value for the netscaler hostname',
+      default : 'newHostName'
+    }]).then(function (answers) {
+      this.config.set('nsHostname',answers.nsHostname);
+      this.config.save();
+    }.bind(this));
+  },
   initializing: function()
   {
   },
@@ -17,15 +28,14 @@ module.exports = yeoman.Base.extend({
       this.templatePath('_NSHostname.cs'),
       this.destinationPath('NSHostname.cs'),
         {appName:this.config.get('appName'),
-          nsUsername:this.config.get('nsUsername'),
-          nsPassword:this.config.get('nsPassword'),
-          nsAddress:this.config.get('nsAddress'),
-          nsPort:this.config.get('nsPort')});
+        nsHostname:this.config.get('nsHostname')});
     this.log('\n');
     this.log(chalk.white('Added the Netscaler Hostname API helper class to the current project.'));
     this.log(chalk.white('To use the newly added code, you can added the following call in your code where needed.'));
     this.log('\n');
     this.log(chalk.bold.cyan('await ListHostname();'));
+    this.log('If you need to set the hostname of the netscaler add the following command to your code.');
+    this.log(chalk.bold.cyan('await SetHostname("' + this.config.get('nsHostname') + '");'));
     this.log('\n');
   }
 });
