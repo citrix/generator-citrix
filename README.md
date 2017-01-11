@@ -95,7 +95,10 @@ yo citrix-netscaler:hostname
 Produces NSHostname.cs in the project directory. In order to use the new methods
 you should add the following method call to your main calling method.
 ```csharp
+//List hostname
 await ListHostname();
+//set the hostname
+await SetHostname("MyNewHostname");
 ```
 
 ### listvservers
