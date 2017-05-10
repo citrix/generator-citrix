@@ -74,6 +74,9 @@ module.exports = yeoman.Base.extend({
     this.fs.copyTpl(
       this.templatePath('_ReturnInfo.cs'),
       this.destinationPath('ReturnInfo.cs'),{appName:this.config.get('appName')});
+    this.fs.copyTpl(
+      this.templatePath('_Project.csproj'),
+      this.destinationPath(this.config.get('appName') + '.csproj'));
   },
   install: function() {
     this.spawnCommand('dotnet',['restore']);
