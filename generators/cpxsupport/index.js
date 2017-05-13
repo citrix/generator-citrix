@@ -33,7 +33,7 @@ module.exports = yeoman.Base.extend({
         this.log(chalk.white('Starting and configuring the container.'));
 
         //starting the netscaler CPX container
-        this.spawnCommand('docker',['run','-e','EULA=yes','-dt','-p','22','-p','80','-p','161/udp','--ulimit core=-1','--cap-add=NET_ADMIN','store/citrix/netscalercpx:11.53-11']);
+        this.spawnCommand('docker',['run','-dt','-e','EULA=yes','-dt','-p','22','-p','80','-p','161/udp','--cap-add=NET_ADMIN','store/citrix/netscalercpx:11.53-11']);
     }
     //call the dotnet restore command.
     this.spawnCommand('dotnet',['restore']);
