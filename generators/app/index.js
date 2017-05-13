@@ -87,7 +87,7 @@ module.exports = yeoman.Base.extend({
     if ( this.config.get('nsCPX'))
     {
       //pulling the netscaler cpx container from the store.
-      this.spawnCommand('docker', ['pull','store/citrix/netscalercpx:11.1-53.11']);
+      this.spawnCommand('docker', ['pull','store/citrix/netscalercpx:12.0-41.16']);
       //starting the netscaler CPX container
       this.spawnCommand('docker',['run','-dt','-e','EULA=yes','-dt','-p','22','-p','80','-p','161/udp','--cap-add=NET_ADMIN','store/citrix/netscalercpx:11.53-11']);
     }
