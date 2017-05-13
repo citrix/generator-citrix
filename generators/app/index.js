@@ -16,6 +16,11 @@ module.exports = yeoman.Base.extend({
       default : this.appname // Default to current folder name
     },
     {
+      type    : 'confirm',
+      name    : 'nsCPX',
+      message : 'Would like to enable Netscaler CPX for this project?'
+    },
+    {
       type    : 'input',
       name    : 'nsAddress',
       message : 'Please enter you Citrix Netscaler IP Address',
@@ -43,6 +48,7 @@ module.exports = yeoman.Base.extend({
       this.log('ns username', answers.nsUsername);
       this.appName = answers.appName;
       this.config.set('appName',answers.appName);
+      this.config.set('nsCPX',answers.nsCPX);
       this.config.set('nsUsername',answers.nsUsername);
       this.config.set('nsPassword',answers.nsPassword);
       this.config.set('nsPort',answers.nsPort);
@@ -66,9 +72,6 @@ module.exports = yeoman.Base.extend({
           nsAddress:this.config.get('nsAddress'),
           nsPort:this.config.get('nsPort')});
     this.fs.copyTpl(
-      this.templatePath('_project.json'),
-      this.destinationPath('project.json'),{appName:this.config.get('appName')});  
-    this.fs.copyTpl(
       this.templatePath('_NSAuthenticate.cs'),
       this.destinationPath('NSAuthenticate.cs'),{appName:this.config.get('appName')});
     this.fs.copyTpl(
@@ -78,7 +81,17 @@ module.exports = yeoman.Base.extend({
       this.templatePath('_Project.csproj'),
       this.destinationPath(this.config.get('appName') + '.csproj'));
   },
-  install: function() {
+  install: function() 
+  {
+    this.log('nsCPX', this.config.get('nsCPX'));
+    if ( this.config.get('nsCPX'))
+    {
+      //pulling the netscaler cpx container from the store.
+      this.spawnCommand('docker', ['pull','store/citrix/netscalercpx:11.1-53.11']);
+      //starting the netscaler CPX container
+      this.spawnCommand('docker',['run','-e','EULA=yes','-dt','-p','22','-p','80','-p','161/udp','--ulimit core=-1','--cap-add=NET_ADMIN','store/citrix/netscalercpx:11.53-11']);
+    }
+    //call the dotnet restore command.
     this.spawnCommand('dotnet',['restore']);
   }
 });
