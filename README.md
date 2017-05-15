@@ -1,7 +1,7 @@
 # generator-citrix-netscaler [![NPM version][npm-image]][npm-url] 
 > A Yeoman generator that scaffolds a .NET Core sample project 
 that show how to interact with the Citrix Netscaler CPX docker container
-via the NITRO REST API
+via the NITRO REST API. It will also ask you if you would to enable Netscaler CPX support and then download, configure and run the netscaler CPX express container;
 
 ## Required Software
 This generator works with the Citrix Netscaler product but the quickest
@@ -55,6 +55,7 @@ app based on what NITRO API you would like to interact with.
 * [citrix-netscaler:ip](#ip)
 * [citrix-netscaler:hostname](#hostname)
 * [citrix-netscaler:listvservers](#listvservers)
+* [citrix-netscaler:cpxsupport](#cpxsupport)
 
 ### Features
 Generates a partial class that contains the API calls to list features
@@ -87,6 +88,22 @@ await Listips();
 ### HOSTNAME
 Generates a partial class that contains the API calls to get and set the
 hostname of the Netscaler CPX.
+
+### CPXSUPPORT
+#### Summary
+the CPXSUPPORT sub-generator will enable the Citrix Netscaler CPX Express container in the current project. This will pull the docker container from the docker store and start it up automatically. A requirement for this is to have docker installed on the device where you creating your project.
+
+Example:
+```bash
+yo citrix-netscaler:cpxsupport
+
+$ Would you like to add Netscaler CPX to y (Y/n)
+$ Please enter the local HTTP port to map to the http port in the docker container (32777)
+$ Please enter the local HTTPS port to map to the https port in the docker container (32778)
+$ Please enter the local SSH port to map to the SSH port in the docker container (32779)
+$ Please enter the local SNMP port to map to the SNMP port in the docker container (32780)
+
+```
 
 Example:
 ```bash
