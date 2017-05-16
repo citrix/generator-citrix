@@ -1,7 +1,7 @@
 # generator-citrix-netscaler [![NPM version][npm-image]][npm-url] 
 > A Yeoman generator that scaffolds a .NET Core sample project 
 that show how to interact with the Citrix Netscaler CPX docker container
-via the NITRO REST API. It will also ask you if you would to enable Netscaler CPX support and then download, configure and run the netscaler CPX express container;
+via the NITRO REST API. It will also ask if you would to enable Netscaler CPX support and then download, configure and run the netscaler CPX express container.
 
 ## Required Software
 This generator works with the Citrix Netscaler product but the quickest
