@@ -2,7 +2,7 @@
   "name": "generator-citrix",
   "version": "2.0.0",
   "description":
-    ".NET Core sample projects that interacts with the Citrix Netscaler appliance via the Citrix NITRO APIs. This can use the Netscaler CPX docker container.",
+    "A group of generators that help developers get started building Citrix enabled applications. Included are NetScaler samples, storefront samples, NetScaler docker CPX containers, etc.",
   "homepage": "http://developer.citrix.com",
   "author": {
     "name": "John McBride",
@@ -11,7 +11,14 @@
   },
   "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": ["Citrix", "Netscaler", "Docker", "yeoman-generator", "asp.net"],
+  "keywords": [
+    "Citrix",
+    "Netscaler",
+    "Docker",
+    "yeoman-generator",
+    "asp.net",
+    "MVC"
+  ],
   "dependencies": {
     "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
@@ -69,6 +76,6 @@
     },
     "plugins": ["prettier"]
   },
-  "repository": "johnmcbride/generator-testingjohn",
+  "repository": "https://github.com/citrix/generator-citrix",
   "license": "MIT"
 }
