@@ -1,53 +1,74 @@
 {
-  "name": "generator-citrix-netscaler",
-  "version": "1.3.0",
-  "description": ".NET Core sample projects that interacts with the Citrix Netscaler appliance via the Citrix NITRO APIs. This can use the Netscaler CPX docker container.",
+  "name": "generator-citrix",
+  "version": "2.0.0",
+  "description":
+    ".NET Core sample projects that interacts with the Citrix Netscaler appliance via the Citrix NITRO APIs. This can use the Netscaler CPX docker container.",
   "homepage": "http://developer.citrix.com",
   "author": {
     "name": "John McBride",
     "email": "john.mcbride@citrix.com",
     "url": "http://developer.citrix.com"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": [
-    "Citrix",
-    "Netscaler",
-    "Docker",
-    "yeoman-generator",
-    "asp.net"
-  ],
+  "keywords": ["Citrix", "Netscaler", "Docker", "yeoman-generator", "asp.net"],
   "dependencies": {
-    "yeoman-generator": "^0.23.0",
-    "chalk": "^1.0.0",
-    "yosay": "^1.0.0"
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1",
+    "http-server": "^0.10.0",
+    "freeport": "^1.0.5",
+    "network": "^0.3.2",
+    "request": "^2.81.0",
+    "sleep": "^5.1.1",
+    "find-port-sync": "^1.1.1",
+    "address": "^1.0.2"
   },
   "devDependencies": {
-    "yeoman-test": "^1.0.0",
-    "yeoman-assert": "^2.0.0",
-    "eslint": "^3.1.1",
-    "eslint-config-xo-space": "^0.14.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-istanbul": "^1.0.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0"
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "coveralls": "^2.13.1",
+    "nsp": "^2.6.3",
+    "eslint": "^4.1.0",
+    "prettier": "^1.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-config-xo": "^0.18.2",
+    "jest": "^21.0.0",
+    "jest-cli": "^21.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
   },
   "eslintConfig": {
-    "extends": "xo-space",
+    "extends": ["xo", "prettier"],
     "env": {
-      "mocha": true
-    }
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": ["prettier"]
   },
-  "repository": "Citrix/generator-citrix-netscaler",
-  "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
-  },
-  "license": "unlicense"
+  "repository": "johnmcbride/generator-testingjohn",
+  "license": "MIT"
 }

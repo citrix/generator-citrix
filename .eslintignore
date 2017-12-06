@@ -1,0 +1,4 @@
+#ignore the following directories from being linted.
+**/_wwwroot/**
+
+generators/webapplb/index.js

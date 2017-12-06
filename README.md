@@ -1,14 +1,17 @@
-# generator-citrix-netscaler [![NPM version][npm-image]][npm-url] 
-> A Yeoman generator that scaffolds a .NET Core sample project 
-that show how to interact with the Citrix Netscaler CPX docker container
-via the NITRO REST API. It will also ask if you would to enable Netscaler CPX support and then download, configure and run the netscaler CPX express container.
+# generator-citrix [![NPM version][npm-image]][npm-url] 
+> A Yeoman generator that provides sample applications and NetScaler CPX (Docker) tooling to help developer get starting writing Citrix enabled applications. In this release there are the following generators.
+- NetScaler CPX download and start
+- NetScaler NITRO API Samples.
+- StoreFront .NET Core sample
+- Sample application routed through a NetScaler CPX load balancer.
 
 ## Required Software
-This generator works with the Citrix Netscaler product but the quickest
-way to get started with Citrix Netscaler is to download the **free** Netscaler CPX Express
+This generator works with several of the Citrix APIs and will require some of the products. Please check out our developer portal at [http://developer.citrix.com](http://developer.citrix.com) form more information and the quickest way to get started.
+
+If you are interested in the **free** Citrix Netscaler CPX Express
 docker image from [here](http://www.microloadbalancer.com). 
 
-This generator builds a .NET Core application, so you will also
+This generator builds .NET Core applications, so you will also
 need the .NET Core SDK and runtime from Microsoft. You can find
 the the .NET Core download [here](https://www.microsoft.com/net/download/core) for the different platforms.
 
@@ -31,106 +34,20 @@ While not required for these samples, it is always good to have a source code ed
 </table>
 
 ## Installation
-First, install [Yeoman](http://yeoman.io) and generator-citrix-netscaler using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-citrix using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 sudo npm install -g yo
-sudo npm install -g generator-citrix-netscaler
+sudo npm install -g generator-citrix
 ```
 
-Then generate your new project:
+Then to generate your new project run the following and select from the list:
 
 ```bash
-yo citrix-netscaler
+yo citrix
 ```
 
-This will prompt you for you Netscaler information and generate a starter project that shows how to authenticate to the 
-Citrix Netscaler CPX container
-
-## Sub-Generators
-There are also several sub generators that will add additional functionality to the sample
-app based on what NITRO API you would like to interact with.
-    
-* [citrix-netscaler:features](#features)
-* [citrix-netscaler:ip](#ip)
-* [citrix-netscaler:hostname](#hostname)
-* [citrix-netscaler:listvservers](#listvservers)
-* [citrix-netscaler:cpxsupport](#cpxsupport)
-
-### Features
-Generates a partial class that contains the API calls to list features
-on the Netscaler CPX container.
-
-Example:
-```bash
-yo citrix-netscaler:features
-```
-Produces NSListFeatures.cs in the project directory. In order to use the new methods
-you should add the following method call to your main calling method.
-```csharp
-await ListFeatures();
-```
-
-### IP
-Generates a partial class that contains the API calls to list IP addresses
-used on the Netscaler CPX container.
-
-Example:
-```bash
-yo citrix-netscaler:ip
-```
-Produces NSIP.cs in the project directory. In order to use the new methods
-you should add the following method call to your main calling method.
-```csharp
-await Listips();
-```
-
-### HOSTNAME
-Generates a partial class that contains the API calls to get and set the
-hostname of the Netscaler CPX.
-
-### CPXSUPPORT
-#### Summary
-the CPXSUPPORT sub-generator will enable the Citrix Netscaler CPX Express container in the current project. This will pull the docker container from the docker store and start it up automatically. A requirement for this is to have docker installed on the device where you creating your project.
-
-Example:
-```bash
-yo citrix-netscaler:cpxsupport
-
-$ Would you like to add Netscaler CPX to y (Y/n)
-$ Please enter the local HTTP port to map to the http port in the docker container (32777)
-$ Please enter the local HTTPS port to map to the https port in the docker container (32778)
-$ Please enter the local SSH port to map to the SSH port in the docker container (32779)
-$ Please enter the local SNMP port to map to the SNMP port in the docker container (32780)
-
-```
-
-Example:
-```bash
-yo citrix-netscaler:hostname
-```
-Produces NSHostname.cs in the project directory. In order to use the new methods
-you should add the following method call to your main calling method.
-```csharp
-//List hostname
-await ListHostname();
-//set the hostname
-await SetHostname("MyNewHostname");
-```
-
-### listvservers
-Generates a partial class that contains the API calls to list
-all of the VServers configured on the the Netscaler CPX.
-
-Example:
-```bash
-yo citrix-netscaler:listvservers
-```
-Produces NSListServers.cs in the project directory. In order to use the new methods
-you should add the following method call to your main calling method.
-```csharp
-await ListVirtualServers();
-```
+This will prompt you to select what type of citrix application you would like to create.
 
 ## Contribution
 We love open source and contributors! Get started by cloning This
