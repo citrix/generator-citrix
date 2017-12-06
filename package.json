@@ -1,6 +1,6 @@
 {
   "name": "generator-citrix",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description":
     "A group of generators that help developers get started building Citrix enabled applications. Included are NetScaler samples, storefront samples, NetScaler docker CPX containers, etc.",
   "homepage": "http://developer.citrix.com",
