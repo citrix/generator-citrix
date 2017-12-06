@@ -1,7 +1,0 @@
-namespace <%= appName %>
-{
-    class ReturnInfo
-    {
-        
-    }
-}
