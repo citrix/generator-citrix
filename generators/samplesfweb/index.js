@@ -76,11 +76,6 @@ module.exports = class extends yeoman {
 
     this.fs.copyTpl(this.templatePath('_wwwroot'), this.destinationPath('wwwroot'), {});
 
-    this.fs.copyTpl(
-      this.templatePath('_preview-images'),
-      this.destinationPath('preview-images'),
-      { sfAddress: storefrontAddress, sfWebURL: storefrontUrl }
-    );
     this.fs.copyTpl(this.templatePath('_.vscode'), this.destinationPath('.vscode'), {});
   }
 };
